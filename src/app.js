@@ -27,7 +27,7 @@ window.onload = function() {
 function newCard(e) {
   let card = document.getElementsByClassName("card")[0];
 
-  let number = Math.floor(Math.random() * 12 + 2);
+  let number = Math.floor(Math.random() * 13 + 2);
   let suit = Math.floor(Math.random() * 4);
 
   if (suit < 2) {
