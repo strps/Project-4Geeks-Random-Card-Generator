@@ -1,1 +1,50 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background: repeating-linear-gradient(
+    45deg,
+    #519e51,
+    #519e51 10px,
+    #5abe5a 10px,
+    #5abe5a 20px
+  );
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 300px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  box-shadow: 2px 2px 10px black;
+}
+
+.card * {
+  display: block;
+}
+
+.card i:nth-child(1) {
+  align-self: flex-start;
+  margin: 20px;
+}
+
+.card i:nth-child(3) {
+  transform: rotate(180deg);
+  margin: 20px;
+}
+
+.card span {
+  align-self: center;
+  font-size: 2em;
+}
+.black {
+  color: black;
+}
+
+.red {
+  color: red;
+}
