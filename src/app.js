@@ -46,7 +46,7 @@ function TimerHandler() {
 function newCard(e) {
   let card = document.getElementsByClassName("card")[0];
 
-  let number = Math.floor(Math.random() * 13 + 2);
+  let number = Math.floor(Math.random() * 13);
   let suit = Math.floor(Math.random() * 4);
 
   if (suit < 2) {
@@ -58,27 +58,12 @@ function newCard(e) {
   //Suit symbols as svg tags
   let suits = ["♠", "♣", "♥", "♦"];
 
+  let numbers = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+
   var card_elements = card.children;
 
   card_elements[0].innerHTML = suits[suit];
   card_elements[2].innerHTML = suits[suit];
 
-  switch (number) {
-    case 14:
-      number = "A";
-      break;
-    case 13:
-      number = "K";
-      break;
-    case 12:
-      number = "Q";
-      break;
-    case 11:
-      number = "J";
-      break;
-    default:
-      number = number;
-  }
-
-  card_elements[1].innerHTML = number;
+  card_elements[1].innerHTML = numbers[number];
 }
