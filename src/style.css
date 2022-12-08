@@ -1,6 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+html,
 body {
+  height: 100%;
   background: repeating-linear-gradient(
     45deg,
     #519e51,
