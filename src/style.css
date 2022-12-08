@@ -3,6 +3,7 @@
 html,
 body {
   height: 100%;
+  width: 100%;
   background: repeating-linear-gradient(
     45deg,
     #519e51,
@@ -29,19 +30,24 @@ body {
   display: block;
 }
 
+.card i:nth-child(1),
+.card i:nth-child(3) {
+  font-size: 3.5em;
+  margin: 0.5em;
+  line-height: 0.5em;
+}
+
 .card i:nth-child(1) {
   align-self: flex-start;
-  margin: 20px;
 }
 
 .card i:nth-child(3) {
   transform: rotate(180deg);
-  margin: 20px;
 }
 
 .card span {
   align-self: center;
-  font-size: 2em;
+  font-size: 3em;
 }
 .black {
   color: black;
@@ -49,4 +55,7 @@ body {
 
 .red {
   color: red;
+}
+
+svg {
 }
