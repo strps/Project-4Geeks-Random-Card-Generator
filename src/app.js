@@ -5,12 +5,16 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
+let intervalId = null;
+
 window.onload = function() {
   newCard();
 
   let new_card_button = document.getElementById("new-card-button");
   new_card_button.addEventListener("click", newCard);
 
+  let timerButton = document.getElementById("timer-button");
+  timerButton.addEventListener("click", TimerHandler);
   let card = document.getElementsByClassName("card")[0];
 
   let width_input = document.getElementById("width-text-input");
@@ -24,6 +28,21 @@ window.onload = function() {
   });
 };
 
+function TimerHandler() {
+  if (!intervalId) {
+    intervalId = setInterval(() => newCard(), 10000);
+    document
+      .getElementById("timer-button")
+      .classList.replace("btn-secondary", "btn-warning");
+  } else {
+    clearInterval(intervalId);
+    intervalId = null;
+    document
+      .getElementById("timer-button")
+      .classList.replace("btn-warning", "btn-secondary");
+  }
+}
+
 function newCard(e) {
   let card = document.getElementsByClassName("card")[0];
 
@@ -36,7 +55,7 @@ function newCard(e) {
     card.classList.replace("black", "red");
   }
 
-  //Suit symbols as svg tag
+  //Suit symbols as svg tags
   let suits = [
     `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suit-spade-fill" viewBox="0 0 16 16">
     <path d="M7.184 11.246A3.5 3.5 0 0 1 1 9c0-1.602 1.14-2.633 2.66-4.008C4.986 3.792 6.602 2.33 8 0c1.398 2.33 3.014 3.792 4.34 4.992C13.86 6.367 15 7.398 15 9a3.5 3.5 0 0 1-6.184 2.246 19.92 19.92 0 0 0 1.582 2.907c.231.35-.02.847-.438.847H6.04c-.419 0-.67-.497-.438-.847a19.919 19.919 0 0 0 1.582-2.907z"/>
